@@ -73,7 +73,24 @@ namespace test.units
             {
                 Assert.False(result);
             }
+        }
 
+        [Theory]
+        [InlineData("Lowpoc Developer 12313", true)]
+        [InlineData("Test unit @@@@!", false)]
+        [InlineData("Test unit !!!!((())", false)]
+        public void TestStringExtensionIsAlphaNumeric(string text, bool expected)
+        {
+            var result = text.IsAlphaNumeric();
+
+            if (expected)
+            {
+                Assert.True(result);
+            }
+            else
+            {
+                Assert.False(result);
+            }
         }
     }
 }

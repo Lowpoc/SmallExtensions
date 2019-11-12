@@ -5,5 +5,6 @@ namespace api.enums
         public const string OnlyNumber = "[^\\d]+";
         public const string OnlyAlphabet = "[^A-Za-z]+";
         public const string WhiteSpace = " ";
+        public const string Aplhanumeric = "[\\w]+$";
     }
 }

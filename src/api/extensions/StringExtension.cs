@@ -59,5 +59,10 @@ namespace api.extensions
 
             return list.Any(value => str.Contains(value));
         }
+
+        public static bool IsAlphaNumeric(this string text)
+        {
+            return Regex.IsMatch(text, RuleRegex.Aplhanumeric);
+        }
     }
 }
