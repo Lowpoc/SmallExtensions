@@ -12,9 +12,12 @@ jobs:
       - run:
           name: Build Api
           command:
-            dotnet build src/api
-            dotnet build src/test
+            - dotnet build src/api
+      - run:
+          name: Build Test
+          command:
+            - dotnet build src/test
       - run:
           name: Tests
           command:
-            dotnet test src/test
+            - dotnet test src/test
