@@ -20,6 +20,6 @@ jobs:
       - run:
           name: Tests
           command:
-            dotnet test src/test --logger "xunit;LogFileName=TestResults.xml"
+            dotnet test src/test --logger "trx;LogFileName=TestResults.trx"
       - store_test_results:
           path: test-results
