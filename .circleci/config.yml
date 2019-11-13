@@ -21,3 +21,5 @@ jobs:
           name: Tests
           command:
             dotnet test src/test
+      - store_test_results:
+          path: test-results
