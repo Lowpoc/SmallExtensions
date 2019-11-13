@@ -64,5 +64,13 @@ namespace api.extensions
         {
             return Regex.IsMatch(text, RuleRegex.Aplhanumeric);
         }
+
+        public static string Invert(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return text;
+
+            var reverseText = new String(text.Reverse().ToArray());
+            return reverseText;
+        }
     }
 }

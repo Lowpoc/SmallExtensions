@@ -92,5 +92,14 @@ namespace test.units
                 Assert.False(result);
             }
         }
+
+        [Theory]
+        [InlineData("Lowpoc Developer", "repoleveD copwoL")]
+        [InlineData("Test unit @@@@!", "!@@@@ tinu tseT")]
+        [InlineData("Test unit !!!!((())", "))(((!!!! tinu tseT")]
+        public void TestStringExtensionInvert(string text, string expected)
+        {
+            Assert.Equal(expected, text.Invert());
+        }
     }
 }
