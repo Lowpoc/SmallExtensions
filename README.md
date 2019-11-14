@@ -44,11 +44,10 @@ dotnet add package SmallExtensions
     var today = new Datetime(2019,11,14);
     var date = new DateTime(2018,11,14);
 
-    datetime.Format(); // 14/11/2018
-    datetime.LastDayOfTheMonth(); // new DateTime(2018,11,30)
-    datetime.InTheSameMonthCurrent(); // true;
-    datetime.Yesterday(); // new DateTime(2018,11,13)
-    
+    date.Format(); // 14/11/2018
+    date.LastDayOfTheMonth(); // new DateTime(2018,11,30)
+    date.InTheSameMonthCurrent(); // true;
+    date.Yesterday(); // new DateTime(2018,11,13)
 ```
 
 ## Contact us
