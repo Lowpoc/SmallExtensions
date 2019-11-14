@@ -7,20 +7,20 @@ Small extensions for your day of developer .Net
 
 ## Release notes
 
-- none
+For release notes refer to [CHANGELOG](https://github.com/Lowpoc/SmallExtesions/blob/master/CHANGELOG.md).
 
 ## Installation
 
 Package Manager (Visual Studio):
 
 ```
-Install-Package
+Install-Package SmallExtensions
 ```
 
 .NET CLI:
 
 ```
-dotnet add package 
+dotnet add package SmallExtensions
 ```
 
 ## How use
