@@ -8,6 +8,7 @@
     <Version>1.0.0</Version>
     <Authors>Marcus Vinicius Santana Silva (@Lowpoc)</Authors>
     <Description>Small extensions for your day of developer .Net</Description>
+    <PackageReleaseNotes>https://github.com/Lowpoc/SmallExtesions/blob/master/CHANGELOG.md</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
