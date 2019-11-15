@@ -101,5 +101,27 @@ namespace test.units
         {
             Assert.Equal(expected, text.Invert());
         }
+
+        [Theory]
+        [InlineData("ab", true)]
+        [InlineData("bb", true)]
+        [InlineData("ASKDJHAKJSDHKJAHDKAD123", false)]
+        [InlineData(" ", false)]
+        [InlineData("", false)]
+        public void TestStringExtensionIsAlphabet(string text, bool expected)
+        {
+            Assert.Equal(expected, text.IsAlphabet());
+        }
+
+        [Theory]
+        [InlineData("ab", 10, "00000000ab")]
+        [InlineData("bb", 5, "000bb")]
+        [InlineData("ASKDJHAKJSDHKJAHDKAD123", 1, "ASKDJHAKJSDHKJAHDKAD123")]
+        [InlineData("", 2, "00")]
+        [InlineData(" ", 3, "00 ")]
+        public void TestStringExtensionZeroFill(string text, int length, string expected)
+        {
+            Assert.Equal(expected, text.ZeroFill(length));
+        }
     }
 }

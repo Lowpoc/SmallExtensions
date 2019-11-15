@@ -23,3 +23,4 @@ jobs:
             dotnet test src/test --logger "xunit;LogFileName=TestResults.xml"
       - store_test_results:
           path: src/test/TestResults
+          destination: TestResults

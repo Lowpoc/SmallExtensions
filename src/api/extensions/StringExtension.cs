@@ -9,6 +9,10 @@ namespace api.extensions
 {
     public static class StringExtension
     {
+        public static bool IsNullOrEmpty(this string text) => string.IsNullOrEmpty(text);
+        public static bool IsNullOrWhiteSpace(this string text) => string.IsNullOrWhiteSpace(text);
+        public static bool IsAlphaNumeric(this string text) => Regex.IsMatch(text, RuleRegex.Aplhanumeric);
+
         public static string OnlyNumbers(this string text)
         {
             if (string.IsNullOrWhiteSpace(text)) return text;
@@ -40,16 +44,6 @@ namespace api.extensions
             return text.Replace(RuleRegex.WhiteSpace, string.Empty);
         }
 
-        public static bool IsNullOrEmpty(this string text)
-        {
-            return string.IsNullOrEmpty(text);
-        }
-
-        public static bool IsNullOrWhiteSpace(this string text)
-        {
-            return string.IsNullOrWhiteSpace(text);
-        }
-
         public static bool In(this string text, bool caseSensitive, params string[] values)
         {
             if (string.IsNullOrWhiteSpace(text)) return false;
@@ -60,17 +54,33 @@ namespace api.extensions
             return list.Any(value => str.Contains(value));
         }
 
-        public static bool IsAlphaNumeric(this string text)
-        {
-            return Regex.IsMatch(text, RuleRegex.Aplhanumeric);
-        }
-
         public static string Invert(this string text)
         {
             if (string.IsNullOrWhiteSpace(text)) return text;
 
             var reverseText = new String(text.Reverse().ToArray());
             return reverseText;
+        }
+
+        public static bool IsAlphabet(this string text)
+        {
+            if (text.IsNullOrWhiteSpace()) return false;
+
+            return !Regex.IsMatch(text, RuleRegex.OnlyAlphabet);
+        }
+
+        public static string ZeroFill(this string text, int length)
+        {
+            if (text == null) return text;
+
+            var count = length - text.Count();
+
+            for (int i = 0; i < count; i++)
+            {
+                text = text.Insert(0, "0");
+            }
+
+            return text;
         }
     }
 }
