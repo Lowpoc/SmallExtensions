@@ -11,4 +11,9 @@
     <PackageReleaseNotes>https://github.com/Lowpoc/SmallExtesions/blob/master/CHANGELOG.md</PackageReleaseNotes>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
