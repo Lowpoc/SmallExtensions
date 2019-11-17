@@ -1,5 +1,6 @@
 using Xunit;
 using api.extensions;
+using System.Linq;
 
 namespace test.units
 {
@@ -122,6 +123,19 @@ namespace test.units
         public void TestStringExtensionZeroFill(string text, int length, string expected)
         {
             Assert.Equal(expected, text.ZeroFill(length));
+        }
+
+        [Fact]
+        public void TestStringExtensionFindWords()
+        {
+            var words = "Marcus Vinicius Santana Silva".FindWords(false, "us", "a");
+            var ocurrencesOfus = words.Where(word => word.Value == "us").SingleOrDefault().Occurrences;
+            var ocurrencesOfa = words.Where(word => word.Value == "a").SingleOrDefault().Occurrences;
+
+            Assert.Contains(words.Where(word => word.Value == "us").Select(item => item.Locations).ToList(), locations => locations.Any(item => item.Start == 4 && item.End == 5));
+            Assert.Contains(words.Where(word => word.Value == "us").Select(item => item.Locations).ToList(), locations => locations.Any(item => item.Start == 13 && item.End == 14));
+            Assert.Equal(2, ocurrencesOfus);
+            Assert.Equal(5, ocurrencesOfa);
         }
     }
 }

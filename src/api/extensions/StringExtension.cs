@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using api.enums;
+using api.models;
 
 namespace api.extensions
 {
@@ -131,6 +134,64 @@ namespace api.extensions
             }
 
             return text;
+        }
+
+        /// <summary>
+        /// Method check if exist a word with case sensitive or no. 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="caseSensitive"></param>
+        /// <param name="values"></param>
+        public static ICollection<Word> FindWords(this string text, bool caseSensitive, params string[] values)
+        {
+            var words = new List<Word>();
+            var str = text;
+
+            foreach (var value in values)
+            {
+                text = str;
+                if (!text.In(caseSensitive, value)) continue;
+
+                while (text.In(caseSensitive, value))
+                {
+                    text = caseSensitive ? text.Trim() : text.ToLower().Trim();
+                    var start = text.IndexOf(caseSensitive ? value.Trim() : value.ToLower().Trim());
+                    var end = start + value.Count() - 1;
+                    var word = words.Where(content => content.Value == value).SingleOrDefault();
+
+                    if (word != null)
+                    {
+                        text = text.Remove(start, value.Count());
+
+                        var increment = word.Occurrences * value.Count();
+
+                        if (word.Locations.Any(item => item.Start == (start + increment) && item.End == (end + increment))) continue;
+
+                        word.Locations.Add(new Location
+                        {
+                            Start = start + increment,
+                            End = end + increment
+                        });
+
+                        continue;
+                    }
+
+                    words.Add(new Word
+                    {
+                        Value = value,
+                        Locations = new Collection<Location> {
+                            new Location {
+                                Start = start,
+                                End = end
+                            }
+                        }
+                    });
+
+                    text = text.Remove(start, value.Count());
+                }
+            }
+
+            return words;
         }
     }
 }
