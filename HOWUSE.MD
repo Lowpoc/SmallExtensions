@@ -1,6 +1,6 @@
 # SmallExtensions
 
-**Sumário**
+**Summary**
 
 - [Installation](#Installation)
 - [Examples](#Examples)
