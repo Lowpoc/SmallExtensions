@@ -8,20 +8,20 @@ jobs:
       - run:
           name: Restore Packages
           command:
-            dotnet restore src/api
+            dotnet restore src/SmallExtensions.API
       - run:
           name: Build Api
           command:
-            dotnet build src/api
+            dotnet build src/SmallExtensions.API
       - run:
           name: Build Test
           command:
-            dotnet build src/test
+            dotnet build src/SmallExtensions.Test
       - run:
           name: Tests
           command:
-            dotnet test src/test --logger "xunit;LogFileName=TestResults.xml"
+            dotnet test src/SmallExtensions.Test --logger "xunit;LogFileName=TestResults.xml"
       - store_test_results:
-          path: src/test/TestResults
+          path: src/SmallExtensions.Test/TestResults
       - store_artifacts:
-          path: src/test/TestResults
+          path: src/SmallExtensions.Test/TestResults

@@ -1,8 +1,8 @@
 using Xunit;
-using api.extensions;
+using SmallExtensions.Api.Extensions;
 using System.Linq;
 
-namespace test.units
+namespace SmallExtensions.Test.Units
 {
     public class StringTest
     {

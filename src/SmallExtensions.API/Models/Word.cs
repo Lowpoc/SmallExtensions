@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace api.models
+namespace SmallExtensions.Api.Models
 {
     /// <summary>
     /// The main class Word.

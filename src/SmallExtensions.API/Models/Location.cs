@@ -1,4 +1,4 @@
-namespace api.models
+namespace SmallExtensions.Api.Models
 {
     /// <summary>
     /// The main class Location.

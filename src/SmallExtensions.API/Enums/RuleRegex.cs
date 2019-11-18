@@ -1,4 +1,4 @@
-namespace api.enums
+namespace SmallExtensions.API.Enums
 {
     /// <summary>
     /// The main class for regex.

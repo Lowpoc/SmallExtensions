@@ -1,8 +1,8 @@
 using System;
 using Xunit;
-using api.extensions;
+using SmallExtensions.Api.Extensions;
 
-namespace test.units
+namespace SmallExtensions.Test.Units
 {
     public class DateTest
     {

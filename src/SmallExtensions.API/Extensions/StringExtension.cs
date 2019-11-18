@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using api.enums;
-using api.models;
+using SmallExtensions.API.Enums;
+using SmallExtensions.Api.Models;
 
-namespace api.extensions
+namespace SmallExtensions.Api.Extensions
 {
     /// <summary>
     /// The main class for extensions of type string.

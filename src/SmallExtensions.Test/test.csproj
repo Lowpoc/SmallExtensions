@@ -13,7 +13,7 @@
     <PackageReference Include="XunitXml.TestLogger" Version="2.1.26" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\api\api.csproj" />
+    <ProjectReference Include="..\SmallExtensions.API\api.csproj" />
   </ItemGroup>
 
 </Project>

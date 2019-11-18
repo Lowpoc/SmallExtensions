@@ -1,6 +1,6 @@
 using System;
 
-namespace api.extensions
+namespace SmallExtensions.Api.Extensions
 {
     /// <summary>
     ///  The main class for extensions of type date.
