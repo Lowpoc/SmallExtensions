@@ -12,7 +12,7 @@ Small extensions for your day of developer .Net
 For release notes refer to [CHANGELOG](https://github.com/Lowpoc/SmallExtesions/blob/master/CHANGELOG.md).
 
 ## How use
-- [Documentation](#https://github.com/Lowpoc/SmallExtesions/blob/master/HOWUSE.md)
+- [Documentation](https://github.com/Lowpoc/SmallExtesions/blob/master/HOWUSE.md)
 
 ## Contact us
 
