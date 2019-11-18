@@ -5,7 +5,7 @@
     <PackageId>SmallExtensions</PackageId>
     <PackageProjectUrl>https://github.com/Lowpoc/SmallExtesions</PackageProjectUrl>
     <PackageLicense>https://github.com/Lowpoc/SmallExtesions/blob/master/LICENSE</PackageLicense>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>Marcus Vinicius Santana Silva (@Lowpoc)</Authors>
     <Description>Small extensions for your day of developer .Net</Description>
     <PackageReleaseNotes>https://github.com/Lowpoc/SmallExtesions/blob/master/CHANGELOG.md</PackageReleaseNotes>
