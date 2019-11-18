@@ -5,7 +5,7 @@
 ## [v1.1.0](https://github.com/Lowpoc/SmallExtesions/releases/tag/V1.1.0) (2019-11-16)
 ### Features:
  - Methods isAlphabet and ZeroFill.
- 
+  
 ### Fix
  - Refactor methods
 
@@ -15,3 +15,10 @@ string text = "asbcd";
 text.IsAlphabet(); // true
 text.ZeroFill(6); // 0asbcd
 ```
+## [v1.2.0](https://github.com/Lowpoc/SmallExtesions/releases/tag/V1.2.0) (2019-11-18)
+
+### Features:
+ - New Methods FindWords
+ - Add documentation
+ ### Fix:
+ - Rename NameSpace
