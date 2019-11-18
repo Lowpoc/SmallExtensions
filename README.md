@@ -3,7 +3,7 @@
 
 Small extensions for your day of developer .Net
 
-[![CircleCI](https://circleci.com/gh/Lowpoc/SmallExtesions/tree/master.svg?style=svg)](https://circleci.com/gh/Lowpoc/SmallExtesions/tree/master)
+[![CircleCI](https://circleci.com/gh/Lowpoc/SmallExtensions/tree/master.svg?style=svg)](https://circleci.com/gh/Lowpoc/SmallExtensions/tree/master)
 [![NuGet Version](https://img.shields.io/nuget/v/smallextensions.svg)](https://img.shields.io/nuget/v/smallextensions.svg)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/smallextensions.svg)](https://www.nuget.org/packages/smallextensions)
 
