@@ -138,10 +138,9 @@ namespace SmallExtensions.Test.Units
             Assert.Equal(5, ocurrencesOfa);
         }
 
-
         [Theory]
-        [InlineData("não","nao")]
-        [InlineData("É","E")]
+        [InlineData("não", "nao")]
+        [InlineData("É", "E")]
         public void TestStringExtensionWithoutAccents(string text, string expected)
         {
             Assert.Equal(expected, text.WithoutAccents());

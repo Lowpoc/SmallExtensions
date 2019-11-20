@@ -49,6 +49,46 @@ namespace SmallExtensions.Api.Extensions
         public static bool InTheLastMonth(this DateTime date) => date.Month == DateTime.Now.AddMonths(-1).Month;
 
         /// <summary>
+        /// The method add Weeks.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="numberOfWeeks"></param>
+        /// <returns></returns>
+        public static DateTime AddWeeks(this DateTime dateTime, int numberOfWeeks) => dateTime.AddDays(numberOfWeeks * 7);
+
+        /// <summary>
+        /// The method add Fortnights.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="numberOfFortnights"></param>
+        /// <returns></returns>
+        public static DateTime AddFortnights(this DateTime dateTime, int numberOfFortnights) => dateTime.AddDays(numberOfFortnights * 15);
+
+        /// <summary>
+        /// The method add Bimesters.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="numberOfBimesters"></param>
+        /// <returns></returns>
+        public static DateTime AddBimesters(this DateTime dateTime, int numberOfBimesters) => dateTime.AddMonths(numberOfBimesters * 2);
+
+        /// <summary>
+        /// The method  add Quarters.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="numberOfQuarters"></param>
+        /// <returns></returns>
+        public static DateTime AddQuarters(this DateTime dateTime, int numberOfQuarters) => dateTime.AddMonths(numberOfQuarters * 3);
+
+        /// <summary>
+        /// The method  add HalfYears.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="numberOfHalfYears"></param>
+        /// <returns></returns>
+        public static DateTime AddHalfYears(this DateTime dateTime, int numberOfHalfYears) => dateTime.AddMonths(numberOfHalfYears * 6);
+
+        /// <summary>
         /// Check if a date belongs the week current.
         /// </summary>
         /// <param name="date"></param>

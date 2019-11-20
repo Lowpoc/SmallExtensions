@@ -26,7 +26,7 @@ namespace SmallExtensions.Test.Units
         [Fact]
         public void TestDateLastDayOfTheMonth()
         {
-            Assert.Equal(new DateTime(2019,11,30).Date, new DateTime(2019, 11, 11).LastDayOfTheMonth().Date);
+            Assert.Equal(new DateTime(2019, 11, 30).Date, new DateTime(2019, 11, 11).LastDayOfTheMonth().Date);
             Assert.Equal(new DateTime(2019, 12, 31).Date, new DateTime(2019, 12, 16).LastDayOfTheMonth().Date);
             Assert.Equal(new DateTime(2020, 1, 31).Date, new DateTime(2020, 1, 05).LastDayOfTheMonth().Date);
         }
@@ -34,7 +34,35 @@ namespace SmallExtensions.Test.Units
         [Fact]
         public void TestInTheSameMonthCurrent()
         {
-            Assert.False(new DateTime(2019,10,13).InTheSameMonthCurrent());
+            Assert.False(new DateTime(2019, 10, 13).InTheSameMonthCurrent());
+        }
+
+        [Fact]
+        public void TestAddWeeks()
+        {
+            var day = new DateTime(2019, 11, 20);
+            Assert.Equal(day.AddDays(14).Date, day.AddWeeks(2).Date);
+        }
+
+        [Fact]
+        public void TestAddAddFortnights()
+        {
+            var day = new DateTime(2019, 11, 20);
+            Assert.Equal(day.AddDays(30).Date, day.AddFortnights(2).Date);
+        }
+
+        [Fact]
+        public void TestAddBimesters()
+        {
+            var day = new DateTime(2019, 11, 20);
+            Assert.Equal(day.AddMonths(4).Date, day.AddBimesters(2).Date);
+        }
+
+        [Fact]
+        public void TestAddHalfYears()
+        {
+            var day = new DateTime(2019, 11, 20);
+            Assert.Equal(day.AddMonths(12).Date, day.AddHalfYears(2).Date);
         }
     }
 }
