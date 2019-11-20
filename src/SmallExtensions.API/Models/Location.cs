@@ -12,7 +12,7 @@ namespace SmallExtensions.Api.Models
         public int Start { get; set; }
 
         /// <summary>
-        /// Indicate first position of a word.
+        /// Indicate last position of a word.
         /// </summary>
         /// <value></value>
         public int End { get; set; }

@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using SmallExtensions.API.Enums;
 using SmallExtensions.Api.Models;
+using System.Net;
+using System.Text;
 
 namespace SmallExtensions.Api.Extensions
 {
@@ -192,6 +194,25 @@ namespace SmallExtensions.Api.Extensions
             }
 
             return words;
+        }
+
+        /// <summary>
+        /// Remove all accents. 
+        /// </summary>
+        /// <param name="text"></param>
+        public static string WithoutAccents(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return text;
+            }
+
+            text = WebUtility.HtmlDecode(text);
+            text = text.Normalize(NormalizationForm.FormD);
+
+            char[] chars = text.Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark).ToArray();
+
+            return new string(chars).Normalize(NormalizationForm.FormC);
         }
     }
 }
