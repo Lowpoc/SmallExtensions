@@ -50,5 +50,12 @@ namespace SmallExtensions.Test.Units
 
             Assert.Equal(10, amount.PercentOf(total));
         }
+
+        [Fact]
+        public void TestRountTo()
+        {
+            decimal amount = 10.2599M;
+            Assert.Equal(10.26M, amount.RoundTo(2));
+        }
     }
 }

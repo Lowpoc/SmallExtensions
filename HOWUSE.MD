@@ -17,6 +17,7 @@
     - [IsAlphabet](#IsAlphabet)
     - [ZeroFill](#ZeroFill)
     - [FindWords](#FindWords)
+    - [WithoutAccents](#WithoutAccents)
   - [Dates](#Dates)
     - [Yesterday](#Yesterday)
     - [Format](#Format)
@@ -24,6 +25,19 @@
     - [InTheSameMonthCurrent](#InTheSameMonthCurrent)
     - [AreInTheLastYear](#AreInTheLastYear)
     - [AreInTheLastSemester](#AreInTheLastSemester)
+    - [AddWeeks](#AddWeeks)
+    - [AddFortnights](#AddFortnights)
+    - [AddBimesters](#AddBimesters)
+    - [AddQuarters](#AddQuarters)
+    - [AddHalfYears](#AddHalfYears)
+  - [Decimal](#Decimal)
+    - [IsPositive](#IsPositive)
+    - [IsNegative](#IsNegative)
+    - [Positive](#Positive)
+    - [Nevative](#Negative)
+    - [RoundTo](#RountTo)
+    - [Percent](#Percent)
+    - [PercentOf](#PercentOf)
 
 ## Installation
 
@@ -183,6 +197,17 @@ class Word {
 }
 ```
 
+### WithoutAccents
+
+Remove all accents.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var text = "áõôí";
+text.WithoutAccents(); // aooi
+```
+
 ## Dates
 
 ### Yesterday
@@ -259,4 +284,136 @@ var today = new Datetime(2018,7,14);
 var date = new DateTime(2018,11,14);
 
 date.AreInTheLastSemester(); // true;
+```
+
+### AddWeeks
+
+The method add Weeks.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var today = new Datetime(2019,11,20);
+
+today.AddWeeks(1); // new Datetime(2019,11,27);
+```
+
+### AddFortnights
+
+The method add Fortnights.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var today = new Datetime(2019,11,5);
+
+today.AddFortnights(1); // new Datetime(2019,11,20);
+```
+
+### AddBimesters
+
+The method add Bimesters.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var today = new Datetime(2019,11,5);
+
+today.AddBimesters(1); // new Datetime(2020,1,5);
+```
+
+### AddQuarters
+
+The method add Quarters.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var today = new Datetime(2019,11,5);
+
+today.AddQuarters(1); // new Datetime(2020,2,5);
+```
+
+### AddHalfYears
+
+The method add HalfYears.
+
+```c#
+using SmallExtensions.API.Extensions;
+
+var today = new Datetime(2019,6,5);
+
+today.AddHalfYears(1); // new Datetime(2020,11,5);
+```
+
+## Decimal
+
+### IsPositive
+
+The method verify if the value is positive (>= 0).
+
+```C#
+decimal amount = 10M;
+amount.IsPositive(); // true;
+
+decimal amountNegative = -10M;
+amount.IsPositive(); // false;
+```
+
+### IsNegative
+
+The method verify if the value is negative (< 0).
+
+```C#
+decimal amount = 10M;
+amount.IsNegative(); // false;
+
+decimal amountNegative = -10M;
+amount.IsNegative(); // true;
+```
+
+### Positive
+
+Convert value negative for positive.
+
+```C#
+decimal amount = -10M;
+amount.Positive(); // 10M;
+```
+
+### Negative
+
+Convert value positive for negative.
+
+```C#
+decimal amount = 10M;
+amount.Negative(); // -10M;
+```
+
+### RountTo
+
+Rounds a decimal value to the specified number of fractional digits and uses the specified rounding convention for the midpoint values.
+
+```C#
+decimal amount = 10.2599M;
+amount.RoundTo(2); // 10.26M;
+```
+
+### Percent
+
+The method returns what is the value of a given percentage.
+
+```C#
+decimal amount = 10M;
+amount.Percent(50); // 5M;
+```
+
+### PercentOf
+
+The method returns which is the percentage of a value with the total value.
+
+```C#
+decimal amount = 10M;
+decimal total = 100M;
+amount.PercentOf(total); // 10;
 ```
